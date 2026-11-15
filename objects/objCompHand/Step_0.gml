@@ -1,6 +1,10 @@
 if global.turn == true{
-	
-	rndint = random_range(1,3)
+	// C:\Users\mare\GameMakerProjects\GachaPonNew
+	if (!selected){
+	randomize();
+	rndint = irandom_range(1,3)
+	selected = true;
+	}
 	
 	if rndint == 1
 	global.npchand = "rock"
@@ -13,23 +17,46 @@ if global.turn == true{
 	if rndint == 3
 	global.npchand = "scissors"
 	
+	timer += delta_time/1000000;
+	
 	draw_self()
 	
 	if global.npchand == "rock"{
 		
 		if global.userhand == "paper"{
-		global.win = true
+		// global.win = true
+		
+		
+		
+		
+		
+		if selected && !global.added{
+			
 		global.coins += 1
-		global.turn = false
-		
-		
-		
 		global.npchand = noone;
+		global.turn = false
+		global.added = true;
+		selected = false;
+		
+		}
+		
 		}
 		
 		else{
 		global.win = false
+		
+		
+		
+		
+		if (timer%5 > 4){
+			
+		global.disabled = false;
+		global.npchand = noone;
 		global.turn = false
+		selected = false;
+		
+		}
+		
 		}
 		
 	}
@@ -37,31 +64,77 @@ if global.turn == true{
 	if global.npchand == "paper"{
 		
 		if global.userhand == "scissors"{
-		global.win = true
+		// global.win = true
+		
+		
+		
+		
+		
+		if selected && !global.added{
+			
 		global.coins += 1
+		global.npchand = noone;
 		global.turn = false
+		global.added = true;
+		selected = false;
+		
+		}
+		
 		}
 		
 		else{
 		global.win = false
+		
+		
+		
+		
+		if (timer%5 > 4){
+			
+			global.disabled = false;
+		global.npchand = noone;
 		global.turn = false
+		selected = false;
+		
+		}
+		
 		}
 		
 	}
 	
-	if global.userhand == "scissors"{
+	if global.npchand == "scissors"{
 		
-		if global.npchand == "rock"{
-		global.win = true
+		if global.userhand == "rock"{
+		// global.win = true
+		
+		
+		
+		
+		
+		if selected && !global.added{
+			
 		global.coins += 1
+		global.npchand = noone;
+		global.added = true;
 		global.turn = false
+		selected = false;
+		
+		}
+		
 		}
 		
 		else{
 		global.win = false
+		
+			if (timer%5 > 4){
+		global.disabled = false;
+		global.npchand = noone;
 		global.turn = false
+		selected = false;
+			}
+		
+		
+		
 		}
 		
 	}
-	
 }
