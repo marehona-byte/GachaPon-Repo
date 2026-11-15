@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"gachaopener",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"gachaopener",
+  "parent":{
+    "name":"GachaPonNew",
+    "path":"GachaPonNew.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
